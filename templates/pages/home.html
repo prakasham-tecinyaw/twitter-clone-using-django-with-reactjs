@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block head_title%} 
+this is amazing
+{% endblock head_title %}
+
+
+{% block content %}
+Welcome to Tweetme
+<script>
+
+const xhr = new XMLHttpRequest()
+const method = 'GET' //'POST'
+const url = "/tweets"
+const responseType ="json"
+
+xhr.responseType = responseType
+xhr.open(method, url)
+xhr.onload = function(){
+    const serveResponse = xhr.response
+    var listedItems = xhr.serveResponse.response
+    console.log(listedItems)
+}
+xhr.send()
+
+</script>
+{% endblock content %}
+
